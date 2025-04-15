@@ -4,8 +4,6 @@ import requests
 
 # USER INFORMATION
 
-
-
 HEADERS = {}    # browser header 
 
 
@@ -44,6 +42,8 @@ def get_user_agent():
         "User-Agent": f"Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     }
 
+
+# TODO issue https://github.com/oliviagallucci/CamelCamelCosco/issues/1 
 
 if __name__ == "__main__":
 
