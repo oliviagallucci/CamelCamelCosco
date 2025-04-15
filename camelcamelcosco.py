@@ -10,6 +10,10 @@ HEADERS = {}    # browser header
 
 
 def get_os_info():
+    """
+    detects the operating system, its version, and architecture.
+    formats that info into a string for a browser user-agent.
+    """
     system = platform.system()
     release = platform.release()
     arch = platform.machine()
@@ -32,6 +36,9 @@ def get_os_info():
     return ua_os
 
 def get_user_agent():
+    """
+    returns a dict with a realistic User-Agent string for HTTP headers
+    """
     os_info = get_os_info()
     return {
         "User-Agent": f"Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
@@ -40,10 +47,6 @@ def get_user_agent():
 
 if __name__ == "__main__":
 
-    # {
-    #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-    # }
-    
     headers = get_user_agent()
     print("Dynamic Headers:\n", headers)
 
